@@ -9,7 +9,7 @@ import (
 	"runtime/pprof"
 	"testing"
 
-	"github.com/blevesearch/bleve"
+	"github.com/blevesearch/bleve/v2"
 	"github.com/yanyiwu/gojieba"
 )
 
@@ -88,7 +88,7 @@ func Example() {
 		fmt.Println(prettify(res))
 	}
 
-	//cleanup cgo allocated heap memory
+	// cleanup cgo allocated heap memory
 	if jieba, ok := (index.Mapping().AnalyzerNamed("gojieba").Tokenizer).(*JiebaTokenizer); !ok {
 		panic("jieba.Free() failed")
 	} else {
